@@ -1,0 +1,52 @@
+{
+    "name": "coder catalogue",
+    "version": "0.1.0",
+    "description": "Save imortant question for later refrence.",
+    "permissions": ["storage", "tabs","scripting"],
+    "icons": {                   
+      "48": "icon48.png"
+    }, 
+    "action": {
+      "default_icon": {
+        "16": "icon48.png",
+        "24": "icon48.png",
+        "32": "icon48.png",
+        "48":"icon48.png"
+      },
+      "default_title": "coder catalogue",
+      "default_popup": "popup.html"
+    },
+    "host_permissions": ["https://leetcode.com/*","https://codeforces.com/*","https://www.codechef.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://leetcode.com/problems/*",
+          "https://codeforces.com/problemset/problem/*",
+          "https://www.codechef.com/problems-old/*",
+          "https://www.codechef.com/submit/*"
+        ],
+        "js": [
+          "./contentScript.js"
+        ],
+        "css":[
+          "styles.css"
+        ],
+        "run_at": "document_end"
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "assets/bookmark.png",
+          "assets/play.png",
+          "assets/delete.png",
+          "assets/save.png"
+        ],
+        "matches": ["https://leetcode.com/*","https://codeforces.com/*","https://www.codechef.com/*"]
+      }
+    ],
+    "manifest_version": 3
+}

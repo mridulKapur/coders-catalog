@@ -1,0 +1,142 @@
+h3{
+  text-align: center;
+  margin-top:0;
+}
+.container {
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  padding:10px;
+  padding-bottom: 20px;
+  width: 630px;
+  color: #314d3e;
+}
+
+.list{
+  height:10rem;
+  width:160px;
+  padding:20px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;  
+  margin-top: 1rem;
+}
+
+.list::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.list::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.list::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom-color: #00254d;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-radius: 0.8rem;
+  margin-right: 10px;
+  padding: 1.5rem;
+  padding-top:1px;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
+}
+
+.problems{
+  height:10rem;
+  width:360px;
+  padding:20px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;  
+  margin-top: 1rem;
+}
+
+.problems::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.problems::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.problems::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+}
+
+.problem_item{
+  /* display:flex;
+  flex-direction:row;
+  color:black;
+  width:100%;
+  margin:5px 0; */
+  display: flex;
+  justify-content: space-between;
+  border-bottom-color: #00254d;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-radius: 0.8rem;
+  margin-right: 10px;
+  padding: 1.5rem;
+  padding-top:1px;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
+}
+
+.problem_sno{
+  width:10%;
+  padding-left: 2px;
+  margin: 0 5px;
+  padding:5px;
+}
+
+.problem_name {
+  all:unset;
+  width:40%;
+  padding-left: 2px;
+  margin: 0 5px;
+  padding:5px;
+}
+
+.problem_name:hover{  
+  text-decoration: underline;
+}
+
+.problem_site{
+  width:100px;
+  margin: 0 5px;
+  padding:5px;
+}
+
+.del-btn{
+  all:unset;
+  height:0.75rem;
+  width:0.75rem;
+  background:red;
+  color:white;
+  border-radius:50%;
+  font-family:   Arial, sans-serif;
+  font-weight:bold;
+  padding:auto;
+  text-align:center;
+  font-size:0.5rem;
+}
+
+.del-btn span{
+  position:relative;
+  top:2px;
+}
