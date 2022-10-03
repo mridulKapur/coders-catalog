@@ -79,11 +79,7 @@ h3{
 }
 
 .problem_item{
-  /* display:flex;
-  flex-direction:row;
-  color:black;
-  width:100%;
-  margin:5px 0; */
+  
   display: flex;
   justify-content: space-between;
   border-bottom-color: #00254d;
