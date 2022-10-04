@@ -2,43 +2,6 @@ let problem_link = "unknown";
 let problem_name = "unknown";
 let site_name = "unknown";
 let lists;
-// const addQuestionToList = async () => {
-// 	const newLink = {
-// 		link: problem_link,
-// 		name: problem_name,
-// 	};
-// 	await fetchLinks().then((currentList) => {
-// 			if(currentList.length === 0 || currentList.some(e => e.name === newLink.name && e.link === newLink.link)===false)
-// 			chrome.storage.sync.set({
-// 				[site_name]: JSON.stringify([...currentList, newLink])
-// 			});
-// 		}
-// 	);
-// };
-
-// const addProblem = (name) => {
-// 	const newProblem = {
-// 		link: problem_link,
-// 		name: problem_name,
-// 		site:site_name,
-// 	}
-// 	lists.forEach((e) => {
-// 		if (e.name === name) {
-// 			e.problems.push(newProblem);
-// 		}
-// 	})
-// 	console.log(lists);
-// 	chrome.storage.sync.set({ [lists]: JSON.stringify(lists) });
-// }
-
-// const fetchLinks = () => {
-// 	return new Promise((resolve) => {
-// 		chrome.storage.sync.get([site_name], (obj) => {
-// 			console.log(obj);
-// 			resolve(obj[site_name] ? JSON.parse(obj[site_name]) : []);
-// 		});
-// 	});
-// };
 
 const addListItemToDOM = (listItemInfo) =>{
 	const listItem = document.createElement("div");
@@ -71,7 +34,6 @@ function addItemToList(){
 		name: document.getElementById("extension_new_list_input").value,
 		problems:[]
 	}
-	// console.log(newListItem);
 	lists.push(newListItem);
 	addListItemToDOM(newListItem);
 	chrome.storage.sync.set({ ["userLists"]: JSON.stringify(lists) });
@@ -108,12 +70,10 @@ const removeProblem = (name) => {
 			e.problems = e.problems.filter(el => {return el.url != problem_link })
 		}
 	});
-	// console.log(lists);
 	chrome.storage.sync.set({ ["userLists"]: JSON.stringify(lists) })
 }
 
 const handleCheck = (e, name) => { 
-	// console.log(e);
 	if (e.target.checked === true) {
 		addProblem(name);
 	}
@@ -216,7 +176,6 @@ const initCCold = () => {
 
 
 const init = async () => {
-	// chrome.storage.sync.clear();
 	chrome.runtime.onMessage.addListener((obj, seder, respone) => {
 		const { type, site, problem_url } = obj;
 		site_name = site;
